@@ -41,7 +41,11 @@ app.use("/logs", logsController)
 
 // =========== //
 // ROUTES //
-
+// ============= //
+// INDEX ROUTE //
+app.get('/', (req, res) => {
+    res.render("index.ejs")
+})
 
 // set up app to run!
 app.listen(PORT, () => {
