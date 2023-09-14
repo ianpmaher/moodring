@@ -78,4 +78,6 @@ input, form {
   display: flex;
   flex-flow: row;
   letter-spacing: 1rem;
+  display: flex;
+  justify-content: space-evenly;
 }

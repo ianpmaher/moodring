@@ -28,9 +28,22 @@ router.get("/history", async (req, res) => {
 })
 // ============= //
 // SHOW ROUTE //
-router.get("/:id/", (req, res) => {
-  res.render("show.ejs")
+router.get("/:id/", async (req, res) => {
+  const foundLog = await Log.findById(req.params.id)
+  res.render("show.ejs", {
+    log: foundLog
+  })
 })
+
+// ============ //
+// EDIT ROUTE //
+router.get("/:id/edit", async (req, res) => {
+  // console.log(`${Product.findById(req.params.id)}`);
+  const logToEdit = await Log.findById(req.params.id);
+  res.render("edit.ejs", {
+    log: logToEdit,
+  });
+});
 
 // POST ROUTE "Create"
 router.post("/", async (req, res) => {
@@ -43,6 +56,10 @@ router.post("/", async (req, res) => {
     res.status(500).send(err)
   }
 })
+
+
+
+
 
 // ============= //
 // EXPORTS //
