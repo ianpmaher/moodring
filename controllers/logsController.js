@@ -34,7 +34,6 @@ router.get("/:id/", async (req, res) => {
     log: foundLog
   })
 })
-
 // ============ //
 // EDIT ROUTE //
 router.get("/:id/edit", async (req, res) => {
@@ -44,7 +43,6 @@ router.get("/:id/edit", async (req, res) => {
     log: logToEdit,
   });
 });
-
 // POST ROUTE "Create"
 router.post("/", async (req, res) => {
   try {
@@ -56,10 +54,31 @@ router.post("/", async (req, res) => {
     res.status(500).send(err)
   }
 })
-
-
-
-
+// ============ //
+// PUT ROUTE -- PUT /logs/:id -- updates the info on the server
+router.put("/:id", async (req, res) => {
+  try {
+    // in edit.ejs, have the "value" of img url is the URL that was there before, so same img
+    const updatedLog = await Log.findByIdAndUpdate(req.params.id, req.body, { new: true })
+      // overwrite the old product and redirect to main page
+    res.redirect("/logs/" + updatedLog.id)
+  } catch (err) {
+    console.log("error in edit", err)
+    res.status(500).send(err)
+  }  
+})
+// ============ //
+// DELETE ROUTE -- DELETE /products/:id -- 
+router.delete("/:id", async (req, res) => {
+  try {
+    const logToDelete = await Log.findByIdAndDelete(req.params.id)
+    console.log("Deleted log: ", logToDelete)
+    res.redirect("/logs/")
+  } catch {
+    console.log("error on delete: ", err)
+    res.status(500).send(err)
+  }
+})
 
 // ============= //
 // EXPORTS //

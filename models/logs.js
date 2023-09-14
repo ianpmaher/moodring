@@ -1,4 +1,8 @@
 const mongoose = require("mongoose")
+
+// attempt at subdocument array
+// https://mongoosejs.com/docs/subdocs.html
+
 // Schema constructor definitions
 const logSchema = new mongoose.Schema({
   name: { type: String, required: true },

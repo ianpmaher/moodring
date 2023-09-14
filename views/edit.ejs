@@ -1,3 +1,20 @@
 <%- include("./partials/head.ejs") %>
 <h1>EDIT PAGE</h1>
+
+<div class="edit-flex-container">
+  <form class="edit-flex-container" action="/logs/<%=log.id%>?_method=PUT" method="POST">
+    <label for="log-date">Date</label>
+    <input type="text" placeholder="<%= log.date %>" name="date" value="<%= log.date %>" id="log-date"/>
+    <label for="log-time">Time</label>
+    <input type="text" placeholder="<%= log.time %>" name="time" value="<%= log.time %>" id="log-time"/>
+    <label for="log-description">Description</label>
+    <input type="text" placeholder="<%= log.description %>" name="description" value="<%= log.description%>" autocomplete="off" id="log-description"/>
+    <label for="log-mood">Mood: </label>
+    <input type="text" placeholder="<%= log.mood %>" value="<%= log.mood %>" name="mood" id="log-mood"/>
+    <label for="log-tags">Tags: </label>
+    <input type="text" placeholder="<%= log.tags %>" name="tags" autocomplete="off" id="log-tags"/>
+    <input type="submit" value="Finalize Edits" class="submit-btn">
+  </form>
+</div>
+
 <%- include("./partials/footer.ejs") %>

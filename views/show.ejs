@@ -1,5 +1,21 @@
 <%- include("./partials/head.ejs") %>
 
-<h1>SHOW ROUTE</h1>
+<a href="/logs/<%= log.id %>"><h2><%= log.date %></h2></a>
+
+<a href ="/logs/<%= log.id %>/edit"><h3>Update Mood Log</h3></a>
+
+<div class="flex-container">
+  <div class="card">
+    <span class="card-detail"><strong>Time: </strong> <%= log.time %> </span>
+    <span class="card-detail"><strong>Mood: </strong> <%= log.mood %> </span>
+    <span class="card-detail"><strong>Description: </strong> <%= log.description %> </span>
+    <span class="card-detail"><strong>Tags: </strong> <%= log.tags %> </span>
+  </div>
+</div>
+
+<form action="/logs/<%= log.id %>?_method=DELETE" method="POST">
+  <input type="submit" value="Delete Mood Log" id="delete-btn" />
+</form>
+
 
 <%- include("./partials/footer.ejs") %>
