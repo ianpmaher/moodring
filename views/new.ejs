@@ -1,11 +1,10 @@
 <%- include("./partials/head.ejs") %>
 
 <h1>NEW ROUTE</h1>
-<div class="edit-flex-container">
-  <form action="/logs" method="POST">
+  <form action="/logs" class="new-form" method="POST">
     Name: <input type="text" name="name" /><br />
-    Date: <input type="datetime-local" name="date" /><br />
-    Time: <input type="text" name="time" /><br />
+    Date: <input type="date" name="date" /><br />
+    Time: <input type="time" name="time" /><br />
     Mood (scale of 1 - 5):
     <div class="radio-buttons">
       <input type="radio" id="mood1" name="mood" value="1" />
@@ -23,6 +22,5 @@
     Tags: <input type="text" name="tags" /><br />
     <input type="submit" value="Publish Log" />
   </form>
-</div>
 
 <%- include("./partials/footer.ejs") %>

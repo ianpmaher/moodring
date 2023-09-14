@@ -4,10 +4,10 @@
   <% for (let i in logs) { %>
   <div class="card">
     <a href="/logs/<%= logs[i].id%>"><h3><%= logs[i].date %></h3></a>
-    <span class="card-detail"><%= logs[i].time %> </span>
-    <span class="card-detail"><%= logs[i].mood %> </span>
-    <span class="card-detail"><%= logs[i].description %> </span>
-    <span class="card-detail"><%= logs[i].tags %> </span>
+    <span class="card-detail"><strong>Time:</strong> <%= logs[i].time %> </span>
+    <span class="card-detail"><strong>Mood:</strong> <%= logs[i].mood %> </span>
+    <span class="card-detail"><strong>Description:</strong> <%= logs[i].description %> </span>
+    <span class="card-detail"><strong>Tags:</strong> <%= logs[i].tags %> </span>
   </div>
   <% } %>
 </div>

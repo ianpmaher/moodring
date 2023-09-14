@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 3000
 app.use(express.urlencoded({ extended: true }))
 // method override npm package in order to DELETE and PUT
 app.use(methodOverride("_method"))
+
 // ===================== //
 // STATIC FILES 
 app.use(express.static("public"))

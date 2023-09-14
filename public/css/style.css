@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(40, 42, 53, 0.2);
+}
+main {
+  width: min-content;
+  margin: 0 auto;
+}
+nav {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 1;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: chocolate;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+nav > ul, nav > li {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  padding: 0;
+  margin: 0.5rem;
+}
+nav a {
+  text-decoration: none;
+  font-size: 1.35rem;
+  color: navy;
+}
+
+
+/* LOG HISTORY PAGE */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0rem;
+}
+.card {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+/* NEW PAGE */
+input, form {
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  width: 100%;
+  text-align: center;
+  padding: 0.25rem;
+}
+.new-form {
+  box-sizing: border-box;
+  min-width: 30rem;
+}
+.radio-buttons {
+  font-size: 1.5rem;
+  display: flex;
+  flex-flow: row;
+  letter-spacing: 1rem;
+}
