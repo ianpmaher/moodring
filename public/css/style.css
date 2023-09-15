@@ -68,7 +68,12 @@ nav a {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 0.9rem;
 }
-
+/* EMOJI class definitions */
+.history-mood {
+  vertical-align:middle;
+  font-size: 1.5rem;
+  ;
+}
 /* NEW PAGE */
 input,
 form {

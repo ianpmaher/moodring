@@ -1,3 +1,5 @@
+
+
 // emoji array
 
 const moodArray = [
@@ -23,4 +25,4 @@ const moodArray = [
   },
 ];
 
-// query selectors for spans
+// need async function to read the parseInt value of the database mood
