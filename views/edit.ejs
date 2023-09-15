@@ -1,20 +1,38 @@
 <%- include("./partials/head.ejs") %>
 <h1>EDIT PAGE</h1>
 
-<div class="edit-flex-container">
-  <form class="edit-flex-container" action="/logs/<%=log.id%>?_method=PUT" method="POST">
-    <label for="log-date">Date</label>
-    <input type="text" placeholder="<%= log.date %>" name="date" value="<%= log.date %>" id="log-date"/>
-    <label for="log-time">Time</label>
-    <input type="text" placeholder="<%= log.time %>" name="time" value="<%= log.time %>" id="log-time"/>
-    <label for="log-description">Description</label>
-    <input type="text" placeholder="<%= log.description %>" name="description" value="<%= log.description%>" autocomplete="off" id="log-description"/>
-    <label for="log-mood">Mood: </label>
-    <input type="text" placeholder="<%= log.mood %>" value="<%= log.mood %>" name="mood" id="log-mood"/>
-    <label for="log-tags">Tags: </label>
-    <input type="text" placeholder="<%= log.tags %>" name="tags" autocomplete="off" id="log-tags"/>
-    <input type="submit" value="Finalize Edits" class="submit-btn">
-  </form>
-</div>
+
+<form action="/logs/<%=log.id%>?_method=PUT" class="new-form" method="POST">
+  Date: <input type="date" placeholder="<%= log.date %>" name="date" value="<%= log.date %>" id="log-date"/> <br />
+  Time: <input type="time" placeholder="<%= log.time %>" name="time" value="<%= log.time %>" id="log-time"/> <br />
+  Mood:
+  <div class="radio-buttons-container">
+    <div class="choice mood1">
+      <label><input type="radio" id="mood1" class="emoji-button" name="mood" value="1" >
+        <span class="emoji"> &#128552; </span></label> <!--sad emoji-->
+    </div> 
+    <div class="choice mood2">
+      <label><input type="radio" id="mood2" class="emoji-button" name="mood" value="2" >
+        <span class="emoji">&#128531; </span></label> <!--sweat emoji-->
+      </div> 
+    <div class="choice mood3">
+      <label><input type="radio" id="mood3" class="emoji-button" name="mood" value="3" >
+        <span class="emoji"> &#128528; </span></label> <!--flat blank emoji-->
+      </div> 
+    <div class="choice mood4">
+      <label><input type="radio" id="mood4" class="emoji-button" name="mood" value="4" >
+        <span class="emoji"> &#128522; </span></label> <!--smiley cheeks emoji-->
+    </div> 
+    <div class="choice mood5">
+      <label><input type="radio" id="mood5" class="emoji-button" name="mood" value="5" >
+        <span class="emoji"> &#128526; </span></label> <!--cool glasses emoji-->
+    </div> 
+  </div>
+  <label for="log-description">Description: </label>
+  <textarea rows="10" cols="60" wrap="soft" placeholder="<%= log.description %>" name="description" value="<%= log.description%>" autocomplete="off" id="log-description"></textarea> <br />
+  <label for="log-tags">Tags: </label>
+  <input type="text" placeholder="<%= log.tags %>" name="tags" autocomplete="off" id="log-tags"/>
+  <input type="submit" value="Finalize Edits" class="submit-btn">
+</form>
 
 <%- include("./partials/footer.ejs") %>

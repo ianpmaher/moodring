@@ -7,16 +7,26 @@
     Time: <input type="time" name="time" /><br />
     Mood (scale of 1 - 5):
     <div class="radio-buttons-container">
-      <input type="radio" id="mood1" class="radio-button" name="mood" value="1" />
-      <label for="mood1"> &#128552; </label> <!--sad emoji-->
-      <input type="radio" id="mood2" class="radio-button" name="mood" value="2" />
-      <label for="mood2"> &#128531; </label> <!--sweat emoji-->
-      <input type="radio" id="mood3" class="radio-button" name="mood" value="3" />
-      <label for="mood3"> &#128528; </label> <!--flat blank emoji-->
-      <input type="radio" id="mood4" class="radio-button" name="mood" value="4" />
-      <label for="mood4"> &#128522; </label> <!--smiley cheeks emoji-->
-      <input type="radio" id="mood5" class="radio-button" name="mood" value="5" />
-      <label for="mood5"> &#128526; </label> <!--cool glasses emoji-->
+      <div class="choice mood1">
+        <label><input type="radio" id="mood1" class="emoji-button" name="mood" value="1" >
+          <span class="emoji"> &#128552; </span></label> <!--sad emoji-->
+        </div> 
+      <div class="choice mood2">
+        <label><input type="radio" id="mood2" class="emoji-button" name="mood" value="2" >
+          <span class="emoji">&#128531; </span></label> <!--sweat emoji-->
+        </div> 
+      <div class="choice mood3">
+        <label><input type="radio" id="mood3" class="emoji-button" name="mood" value="3" >
+          <span class="emoji"> &#128528; </span></label> <!--flat blank emoji-->
+        </div> 
+      <div class="choice mood4">
+        <label><input type="radio" id="mood4" class="emoji-button" name="mood" value="4" >
+          <span class="emoji"> &#128522; </span></label> <!--smiley cheeks emoji-->
+        </div> 
+      <div class="choice mood5">
+        <label><input type="radio" id="mood5" class="emoji-button" name="mood" value="5" >
+          <span class="emoji"> &#128526; </span></label> <!--cool glasses emoji-->
+        </div> 
     </div>
     Description: <textarea rows="10" cols="60" wrap="soft" name="description" autocomplete="off">  </textarea><br />
     Tags: <input type="text" name="tags" /><br />
