@@ -6,10 +6,32 @@
 
 <div class="flex-container">
   <div class="card">
-    <span class="card-detail"><strong>Time: </strong> <%= log.time %> </span>
-    <span class="card-detail"><strong>Mood: </strong> <span class="emoji"><%= log.mood %></span> </span>
-    <span class="card-detail"><strong>Description: </strong> <%= log.description %> </span>
-    <span class="card-detail"><strong>Tags: </strong> <%= log.tags %> </span>
+    <span class="card-detail">
+      <strong>Time: </strong> <%= log.time %> 
+    </span>
+    <span class="card-detail">
+      <% if (parseInt((log.mood)) == 1) { %>
+        <strong>Mood:</strong> <%= log.mood %><span class="history-mood"> 😨 </span>
+      <% } %>
+      <% if (parseInt((log.mood)) == 2) { %>
+        <strong>Mood:</strong> <%= log.mood %><span class="history-mood"> 😓 </span>
+      <% } %>
+      <% if (parseInt((log.mood)) == 3) { %>
+        <strong>Mood:</strong> <%= log.mood %><span class="history-mood"> 😑 </span>
+      <% } %>
+      <% if (parseInt((log.mood)) == 4) { %>
+        <strong>Mood:</strong> <%= log.mood %><span class="history-mood"> 😊 </span>
+      <% } %>
+      <% if (parseInt((log.mood)) == 5) { %>
+        <strong>Mood:</strong> <%= log.mood %><span class="history-mood"> 😎 </span>
+      <% } %>
+    </span>
+    <span class="card-detail">
+      <strong>Description: </strong> <%= log.description %> 
+    </span>
+    <span class="card-detail">
+      <strong>Tags: </strong> <%= log.tags %> 
+    </span>
   </div>
 </div>
 
