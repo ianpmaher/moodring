@@ -1,3 +1,13 @@
+/* DECLARING CSS GLOBAL VARIABLES */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
+:root {
+  --main-background: #355C7D;
+  --purple-background: #6C5B7B;
+  --lilac-background: #C06C84;
+  --cinnabar-background: #F67280;
+  --burlywood-background: #F8B195;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +20,8 @@ body {
   /* align-items: center; */
   justify-content: center;
   flex-direction: column;
-  background: rgba(40, 42, 53, 0.2);
+  /* below looks really cool but maybe not for this app */
+  /* background: linear-gradient(0deg, var(--main-background) 0%, var(--purple-background) 20%, var(--lilac-background) 40%, var(--cinnabar-background) 60%, var(--burlywood-background) 80%); */
 }
 main {
   width: fit-content;
@@ -19,15 +30,17 @@ main {
 }
 nav {
   display: flex;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 1;
+  bottom: 1;
   flex-flow: row wrap;
   justify-content: center;
-  background-color: chocolate;
+  background-color: var(--lilac-background);
   max-width: fit-content;
   margin: 0 auto;
+  
 }
 nav > ul,
 nav > li {
@@ -38,7 +51,7 @@ nav > li {
   padding: 0;
   margin: 0.5rem;
 }
-nav a {
+a {
   text-decoration: none;
   font-size: 1.35rem;
   color: navy;
@@ -98,11 +111,15 @@ textarea {
   border: 1px solid black;
   padding: 0.25rem;
 }
+/* fixed my issue with time PM/AM cutting off */
+input[type="time"] {
+  letter-spacing: 0.15rem;
+}
 .new-form {
   min-width: 35rem;
 }
 
-/* emojis stuff! I am super proud of this CSS*/
+/* emojis stuff! I am super proud of this CSS */
 .radio-buttons-container {
   display: flex;
   flex-flow: row;
@@ -145,4 +162,35 @@ textarea {
 .mood5 input:checked + span {
   background-color:turquoise;
   opacity: 1;
+}
+
+/* CIRCLES ON MAIN PAGE */
+.circle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle-outer {
+  width: 40rem;
+  height: 40rem;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 3rem var(--purple-background), inset 0 0 0 80px #fff;
+  align-items: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content:space-evenly;
+  transition: 0.5s all linear;
+}
+.index-link {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background-color: var(--cinnabar-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle-outer:hover {
+  box-shadow: inset 0 0 0 3rem var(--lilac-background), inset 0 0 0 80px #fff;
+  background-color:#F8B195;
 }
