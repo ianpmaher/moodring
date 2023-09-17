@@ -1,18 +1,32 @@
 /* DECLARING CSS GLOBAL VARIABLES */
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
-:root {
+/* :root {
   --main-background: #355C7D;
   --purple-background: #6C5B7B;
   --lilac-background: #C06C84;
   --cinnabar-background: #F67280;
   --burlywood-background: #F8B195;
+} */
+
+:root {
+  --background-deep: rgba(40,42,53,1);
+  --dark-navy: #0f1644;
+  --orange-brown: #b56422;
+  --true-blue: #096191;
+  --sea-green: #3d838b;
+  --beige: #ebd8ae;
+  --dark-green: #163235;
+  --medium-green: #106967;
+  --turquoise-bright: #32bfda;
+  --gold-beige: #efca7c;
+  --forest-green: #325343;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Playfair Display", serif;
 }
 body {
   min-height: 100vh;
@@ -21,7 +35,9 @@ body {
   justify-content: center;
   flex-direction: column;
   /* below looks really cool but maybe not for this app */
-  /* background: linear-gradient(0deg, var(--main-background) 0%, var(--purple-background) 20%, var(--lilac-background) 40%, var(--cinnabar-background) 60%, var(--burlywood-background) 80%); */
+  /* background: linear-gradient(to right, var(--dark-green), var(--dark-navy), var(--dark-green)); */
+  background-color: var(--background-deep);
+
 }
 main {
   width: fit-content;
@@ -37,10 +53,9 @@ nav {
   bottom: 1;
   flex-flow: row wrap;
   justify-content: center;
-  background-color: var(--lilac-background);
+  background-color: var(--gold-beige);
   max-width: fit-content;
   margin: 0 auto;
-  
 }
 nav > ul,
 nav > li {
@@ -71,21 +86,22 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 1px solid black;
   gap: 0.35rem;
   max-width: 15rem;
   min-height: 12rem;
   padding: 0.5rem;
+  background-color: var(--true-blue);
+  border-radius: 10%;
 }
 .card-detail {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Quicksand", Geneva, Tahoma, sans-serif;
   font-size: 0.9rem;
+  color: var(--gold-beige);
 }
 /* EMOJI class definitions */
 .history-mood {
-  vertical-align:middle;
+  vertical-align: middle;
   font-size: 1.5rem;
-  ;
 }
 /* NEW PAGE */
 input,
@@ -95,7 +111,7 @@ form {
   flex-flow: column wrap;
   max-width: 40rem;
   width: 100%;
-  text-align:center;
+  text-align: center;
 }
 input {
   padding: 0.5rem 0.5rem 0.5rem 0rem;
@@ -144,15 +160,15 @@ input[type="time"] {
   background-color: white !important;
 }
 .mood1 input:checked + span {
-  background-color:darkblue;
+  background-color: darkblue;
   opacity: 1;
 }
 .mood2 input:checked + span {
-  background-color:darkorchid;
+  background-color: darkorchid;
   opacity: 1;
 }
 .mood3 input:checked + span {
-  background-color:darkorange;
+  background-color: darkorange;
   opacity: 1;
 }
 .mood4 input:checked + span {
@@ -160,7 +176,7 @@ input[type="time"] {
   opacity: 1;
 }
 .mood5 input:checked + span {
-  background-color:turquoise;
+  background-color: turquoise;
   opacity: 1;
 }
 
@@ -174,23 +190,34 @@ input[type="time"] {
   width: 40rem;
   height: 40rem;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 3rem var(--purple-background), inset 0 0 0 80px #fff;
+  box-shadow: inset 0 0 0 3rem lemonchiffon, inset 0 0 0 80px #fff;
   align-items: center;
   display: flex;
   flex-flow: column wrap;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   transition: 0.5s all linear;
 }
-.index-link {
+.index-link,
+#home-1,
+#home-2 {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
-  background-color: var(--cinnabar-background);
+  background-color: lemonchiffon;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.5s all linear;
 }
 .circle-outer:hover {
-  box-shadow: inset 0 0 0 3rem var(--lilac-background), inset 0 0 0 80px #fff;
-  background-color:#F8B195;
+  box-shadow: inset 0 0 0 3rem lemonchiffon, inset 0 0 0 80px #fff;
+  background-color: #f8b195;
+}
+#home-1:hover {
+  background-color: chartreuse;
+  color: white;
+}
+#home-2:hover {
+  background-color: cadetblue;
+  color: white;
 }
