@@ -48,7 +48,7 @@ router.post("/", async (req, res) => {
   try {
     const newLog = await Log.create(req.body)
     console.log(newLog)
-    res.redirect("/logs")
+    res.redirect("/history/")
   } catch (err) {
     console.log(err)
     res.status(500).send(err)
@@ -61,7 +61,7 @@ router.put("/:id", async (req, res) => {
     // in edit.ejs, have the "value" of img url is the URL that was there before, so same img
     const updatedLog = await Log.findByIdAndUpdate(req.params.id, req.body, { new: true })
       // overwrite the old product and redirect to main page
-    res.redirect("/history/" + updatedLog.id)
+    res.redirect("/logs/" + updatedLog.id)
   } catch (err) {
     console.log("error in edit", err)
     res.status(500).send(err)

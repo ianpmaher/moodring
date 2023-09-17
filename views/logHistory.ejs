@@ -2,36 +2,39 @@
 
 <div class="grid-container">
   <% for (let i in logs) { %>
-  <div class="card">
-    <a href="/logs/<%= logs[i].id%>"><h3><%= logs[i].date %></h3></a>
-    <span class="card-detail">
-      <strong>Time:</strong> <%= logs[i].time %> 
-    </span>
-    <!-- OMG I GOT THIS TO WORK! I needed it to be structured as if statement, couldn't figure out switch -->
-    <span class="card-detail">
-      <% if (parseInt((logs[i].mood)) == 1) { %>
-        <strong>Mood:</strong> <%= logs[i].mood %><span class="history-mood"> 😨 </span>
-      <% } %>
-      <% if (parseInt((logs[i].mood)) == 2) { %>
-        <strong>Mood:</strong> <%= logs[i].mood %><span class="history-mood"> 😓 </span>
-      <% } %>
-      <% if (parseInt((logs[i].mood)) == 3) { %>
-        <strong>Mood:</strong> <%= logs[i].mood %><span class="history-mood"> 😑 </span>
-      <% } %>
-      <% if (parseInt((logs[i].mood)) == 4) { %>
-        <strong>Mood:</strong> <%= logs[i].mood %><span class="history-mood"> 😊 </span>
-      <% } %>
-      <% if (parseInt((logs[i].mood)) == 5) { %>
-        <strong>Mood:</strong> <%= logs[i].mood %><span class="history-mood"> 😎 </span>
-      <% } %>
-    </span>
-    <span class="card-detail">
-      <strong>Description:</strong> <%= logs[i].description %> 
-    </span>
-    <span class="card-detail">
-      <strong>Tags:</strong> <%= logs[i].tags %> 
-    </span>
-  </div>
+  
+    <a href="/logs/<%= logs[i].id%>">
+      <div class="card">
+        <h3><%= logs[i].date %></h3>
+        <span class="card-detail">
+          <strong>Time:</strong> <%= logs[i].time %> 
+        </span>
+        <!-- OMG I GOT THIS TO WORK! I needed it to be structured as if statement, couldn't figure out switch -->
+        <span class="card-detail">
+          <% if (parseInt((logs[i].mood)) == 1) { %>
+            <strong>Mood:</strong> <%= logs[i].mood %><span class="history-mood"> 😨 </span>
+          <% } %>
+          <% if (parseInt((logs[i].mood)) == 2) { %>
+            <strong>Mood:</strong> <%= logs[i].mood %><span class="history-mood"> 😓 </span>
+          <% } %>
+          <% if (parseInt((logs[i].mood)) == 3) { %>
+            <strong>Mood:</strong> <%= logs[i].mood %><span class="history-mood"> 😑 </span>
+          <% } %>
+          <% if (parseInt((logs[i].mood)) == 4) { %>
+            <strong>Mood:</strong> <%= logs[i].mood %><span class="history-mood"> 😊 </span>
+          <% } %>
+          <% if (parseInt((logs[i].mood)) == 5) { %>
+            <strong>Mood:</strong> <%= logs[i].mood %><span class="history-mood"> 😎 </span>
+          <% } %>
+        </span>
+        <span class="card-detail">
+          <strong>Description:</strong> <%= logs[i].description %> 
+        </span>
+        <span class="card-detail">
+          <strong>Tags:</strong> <%= logs[i].tags %> 
+        </span>
+      </div>
+    </a>
   <% } %>
 </div>
 

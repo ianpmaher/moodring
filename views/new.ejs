@@ -1,6 +1,6 @@
 <%- include("./partials/head.ejs") %>
 
-<h1>NEW ROUTE</h1>
+<h1 class="title-text">new mood</h1>
   <form action="/logs" class="new-form" method="POST">
     Name: <input type="text" name="name" /><br />
     Date: <input type="date" name="date" /><br />
@@ -8,23 +8,23 @@
     Mood (scale of 1 - 5):
     <div class="radio-buttons-container">
       <div class="choice mood1">
-        <label><input type="radio" id="mood1" class="emoji-button" name="mood" value="1" >
+        <label class="emoji-button"><input type="radio" id="mood1" name="mood" value="1" >
           <span class="emoji"> &#128552; </span></label> <!--sad emoji-->
         </div> 
       <div class="choice mood2">
-        <label><input type="radio" id="mood2" class="emoji-button" name="mood" value="2" >
+        <label class="emoji-button"><input type="radio" id="mood2" name="mood" value="2" >
           <span class="emoji">&#128531; </span></label> <!--sweat emoji-->
         </div> 
       <div class="choice mood3">
-        <label><input type="radio" id="mood3" class="emoji-button" name="mood" value="3" >
+        <label class="emoji-button"><input type="radio" id="mood3" name="mood" value="3" >
           <span class="emoji"> &#128528; </span></label> <!--flat blank emoji-->
         </div> 
       <div class="choice mood4">
-        <label><input type="radio" id="mood4" class="emoji-button" name="mood" value="4" >
+        <label class="emoji-button"><input type="radio" id="mood4" name="mood" value="4" >
           <span class="emoji"> &#128522; </span></label> <!--smiley cheeks emoji-->
         </div> 
       <div class="choice mood5">
-        <label><input type="radio" id="mood5" class="emoji-button" name="mood" value="5" >
+        <label class="emoji-button"><input type="radio" id="mood5" name="mood" value="5" >
           <span class="emoji"> &#128526; </span></label> <!--cool glasses emoji-->
         </div> 
     </div>

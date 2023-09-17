@@ -1,9 +1,7 @@
 <%- include("./partials/head.ejs") %>
 
-<a href="/logs/<%= log.id %>"><h2><%= log.date %></h2></a>
-
-<a href ="/logs/<%= log.id %>/edit"><h3>Update Mood Log</h3></a>
-
+<a href="/logs/<%= log.id %>"><h2 class="title-text"><%= log.date %></h2></a>
+<br/>
 <div class="flex-container">
   <div class="card">
     <span class="card-detail">
@@ -34,7 +32,9 @@
     </span>
   </div>
 </div>
-
+<br/>
+<a href ="/logs/<%= log.id %>/edit"><button class="button-text">Update this log</button></a>
+<br/>
 <form action="/logs/<%= log.id %>?_method=DELETE" method="POST">
   <input type="submit" value="Delete Mood Log" id="delete-btn" />
 </form>
