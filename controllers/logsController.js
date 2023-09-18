@@ -48,7 +48,7 @@ router.post("/", async (req, res) => {
   try {
     const newLog = await Log.create(req.body)
     console.log(newLog)
-    res.redirect("/history/")
+    res.redirect("/logs/history/")
   } catch (err) {
     console.log(err)
     res.status(500).send(err)

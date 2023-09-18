@@ -33,11 +33,12 @@
   </div>
 </div>
 <br/>
-<a href ="/logs/<%= log.id %>/edit"><button class="button-text">Update this log</button></a>
-<br/>
-<form action="/logs/<%= log.id %>?_method=DELETE" method="POST">
-  <input type="submit" value="Delete Mood Log" id="delete-btn" />
-</form>
+  <a href ="/logs/<%= log.id %>/edit"><button class="button-text">Update this log</button></a>
+  <br/>
+  <br/>
+  <form action="/logs/<%= log.id %>?_method=DELETE" method="POST">
+    <input type="submit" value="Delete Mood Log" id="delete-btn" />
+  </form>
 
 
 <%- include("./partials/footer.ejs") %>

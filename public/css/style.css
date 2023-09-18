@@ -49,11 +49,12 @@ nav {
   bottom: 1;
   flex-flow: row wrap;
   justify-content: center;
-  background-color: var(--gold-beige);
+  background-color: var(--sea-green);
   max-width: fit-content;
   margin: 0 auto;
   letter-spacing: 1px;
-  padding: 0.5rem;
+  padding: 2rem;
+  border-radius: 10%;
 }
 nav > ul,
 nav > li {
@@ -71,14 +72,21 @@ a {
 }
 
 .title-text {
-  color:aliceblue
+  color:aliceblue;
+  margin: 0;
+  padding: 0;
 }
 .button-text {
   background-color: var(--purple-background);
   color: mintcream;
   font-size: 1.1rem;
   border-radius: 10px;
-  padding: 0.25rem;
+  padding: 0.5rem;
+  letter-spacing: 0.2rem;
+  transition: 0.7s linear all;
+}
+.button-text:hover {
+  background-color: var(--sea-green);
 }
 /* LOG HISTORY PAGE */
 .grid-container {
@@ -100,6 +108,11 @@ a {
   padding: 0.5rem;
   background-color: var(--true-blue);
   border-radius: 10%;
+  transition: 0.5s cubic-bezier(.7,.13,.82,.95) all
+}
+.card:hover {
+  scale: 125%;
+  border: 0.3rem solid var(--gold-beige)
 }
 .card-detail {
   font-family: "Quicksand", Geneva, Tahoma, sans-serif;
@@ -117,17 +130,17 @@ form {
   display: flex;
   align-items: center;
   flex-flow: column wrap;
-  max-width: 40rem;
+  max-width: 20rem;
   width: 100%;
   text-align: center;
 }
 input {
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  padding: 0.5rem;
   border-radius: 10px;
   border: 1px solid black;
 }
 textarea {
-  width: 100%;
+  max-width: 35rem;
   height: 5rem;
   text-overflow: ellipsis;
   resize: none;
@@ -151,7 +164,8 @@ input[type="submit"]:hover {
   background-color: var(--beige);
 }
 .new-form {
-  min-width: 35rem;
+  min-width: 30rem;
+  margin-top: -3rem;
 }
 
 /* emojis stuff! I am super proud of this CSS */
@@ -185,7 +199,7 @@ input[type="submit"]:hover {
   border-radius: 50%;
 }
 .mood2 input:checked + span {
-  background-color: var(--purple-background);
+  background-color:mediumpurple;
   opacity: 1;
   border-radius: 50%;
 }
@@ -195,7 +209,7 @@ input[type="submit"]:hover {
   border-radius: 50%;
 }
 .mood4 input:checked + span {
-  background-color: var(--true-blue);
+  background-color:forestgreen;
   opacity: 1;
   border-radius: 50%;
 }
@@ -245,4 +259,27 @@ input[type="submit"]:hover {
 #home-2:hover {
   background-color: var(--cinnabar-background);
   color: white;
+}
+
+/* CIRCLE ON NEW PAGE HOPEFULLY */
+.circle-container-new {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+.circle-outer-new {
+  width: 50rem;
+  height: 50rem;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 3rem var(--lilac-background), inset 0 0 0 5rem var(--purple-background);
+  align-items: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  transition: 0.7s all linear;
+}
+.circle-outer-new:hover {
+  box-shadow: inset 0 0 0 3rem var(--purple-background), inset 0 0 0 5rem var(--turquoise-bright);
+  background-color: var(--true-blue);
 }
