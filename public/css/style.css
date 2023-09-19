@@ -42,12 +42,12 @@ main {
 }
 nav {
   display: flex;
+  flex-flow: column wrap;
   position: fixed;
   top: 0;
   left: 0;
   right: 1;
   bottom: 1;
-  flex-flow: row wrap;
   justify-content: center;
   background-color: var(--sea-green);
   max-width: fit-content;
@@ -60,7 +60,7 @@ nav > ul,
 nav > li {
   list-style-type: none;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   gap: 2rem;
   padding: 0;
   margin: 0.5rem;
@@ -151,6 +151,10 @@ textarea {
 /* fixed my issue with time PM/AM cutting off */
 input[type="time"] {
   letter-spacing: 0.15rem;
+}
+input[type="color"] {
+  margin: 0.5rem;
+  height: 3rem;
 }
 input[type="submit"] {
   letter-spacing: 0.15rem;
