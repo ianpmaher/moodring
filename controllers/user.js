@@ -3,17 +3,18 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const User = require("../models/user.js");
 
-router.get("/", (req, res) => {
+router.get("/new", (req, res) => {
   // res.send("new user screen")
   res.render("newUser.ejs");
 });
 // login page
 router.get("/login", (req, res) => {
   // res.send("new user screen")
-  res.render("login.ejs");
+  res.redirect("/sessions/new");
 });
 
-router.post("/login", async (req, res) => {
+// creating new user
+router.post("/new", async (req, res) => {
   try {
     console.log("before has: ", req.body);
     // salt of 10 = level of difficulty of hashing

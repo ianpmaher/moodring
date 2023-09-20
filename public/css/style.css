@@ -70,7 +70,9 @@ a {
   font-size: 1.35rem;
   color: var(--cinnabar-background);
 }
-
+footer {
+  text-align: center;
+}
 .title-text {
   color:aliceblue;
   margin: 0;

@@ -11,12 +11,16 @@ const Log = require("../models/logs.js");
 // ============= //
 // INDEX ROUTE //
 router.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", {
+    currentUser: req.session.currentUser
+  });
 });
 // ============= //
 // NEW ROUTE //
 router.get("/new", (req, res) => {
-  res.render("new.ejs");
+  res.render("new.ejs", {
+    currentUser: req.session.currentUser
+  });
 });
 // ============= //
 // HISTORY PAGE ROUTE //
@@ -24,6 +28,7 @@ router.get("/history", async (req, res) => {
   const foundLogs = await Log.find({});
   res.render("logHistory.ejs", {
     logs: foundLogs,
+    currentUser: req.session.currentUser
   });
 });
 // ============= //
@@ -32,6 +37,7 @@ router.get("/:id/", async (req, res) => {
   const foundLog = await Log.findById(req.params.id);
   res.render("show.ejs", {
     log: foundLog,
+    currentUser: req.session.currentUser
   });
 });
 // ============ //
@@ -41,6 +47,7 @@ router.get("/:id/edit", async (req, res) => {
   const logToEdit = await Log.findById(req.params.id);
   res.render("edit.ejs", {
     log: logToEdit,
+    currentUser: req.session.currentUser
   });
 });
 // POST ROUTE "Create"

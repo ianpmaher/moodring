@@ -56,20 +56,24 @@ db.on("disconnected", () => {
 const logsController = require("./controllers/logsController.js");
 // import controller userController.js
 const userController = require("./controllers/user.js");
+// import controller sessions controller = sessions.js ??
+const sessionsController = require("./controllers/sessions.js")
 
 // === Authentication === //
 // this is custom middleware
-const isAuthenticated = (req, res, next) => {
-  if (req.session.currentUser) {
-    next();
-  } else {
-    res.redirect("/user/login");
-  }
-};
+// const isAuthenticated = (req, res, next) => {
+//   if (req.session.currentUser) {
+//     next();
+//   } else {
+//     res.redirect("/sessions/");
+//   }
+// };
 
 // use controller for user
 app.use("/user", userController);
-app.use(isAuthenticated);
+// app.use(isAuthenticated);
+// sessions controller
+app.use("/sessions", sessionsController)
 // use this controller with app.use so whole server accesses
 app.use("/logs", logsController);
 
@@ -78,7 +82,9 @@ app.use("/logs", logsController);
 // ============= //
 // INDEX ROUTE //
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", {
+    currentUser: req.session.currentUser
+  });
 });
 
 // testing the user auth stuff
