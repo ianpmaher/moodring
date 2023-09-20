@@ -119,9 +119,7 @@ a {
   font-size: 1rem;
   color:mintcream;
 }
-.flex-container {
-  display: flex;
-}
+
 /* EMOJI class definitions */
 .history-mood {
   vertical-align: middle;
@@ -172,7 +170,17 @@ input[type="submit"]:hover {
 }
 .new-form {
   min-width: 30rem;
-  margin-top: -3rem;
+  /* margin-top: -3rem; */
+}
+
+ /* user login flex-container */
+ .flex-container {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 2rem;
+  align-items:center;
+  justify-content: center;
+  gap: 3rem;
 }
 
 /* emojis stuff! I am super proud of this CSS */

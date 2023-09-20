@@ -1,5 +1,14 @@
 <%- include("./partials/head.ejs") %>
 
+<div class="flex-container">
+  <h1 class="title-text">Please login:</h1>
+  <form class="new-form" action="/user/login" method="POST">
+    <input type="text" placeholder="Username" name="username" />
+    <input type="password" placeholder="Password" name="password" />
+    <input type="submit" value="Login" />
+  </form>
 
+  <a href="/user/">Create an Account</a>
+</div>
 
 <%- include("./partials/footer.ejs") %>
