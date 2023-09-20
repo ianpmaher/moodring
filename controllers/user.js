@@ -5,12 +5,16 @@ const User = require("../models/user.js");
 
 router.get("/new", (req, res) => {
   // res.send("new user screen")
-  res.render("newUser.ejs");
+  res.render("newUser.ejs", {
+    currentUser: req.session.currentUser
+  });
 });
 // login page
 router.get("/login", (req, res) => {
   // res.send("new user screen")
-  res.render("login.ejs");
+  res.render("login.ejs", {
+    currentUser: req.session.currentUser
+  });
 });
 
 // creating new user

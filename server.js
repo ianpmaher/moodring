@@ -74,7 +74,7 @@ const isAuthenticated = (req, res, next) => {
 app.use("/user", userController);
 // sessions controller
 app.use("/sessions", sessionsController)
-app.use(isAuthenticated);
+// app.use(isAuthenticated);
 // use this controller with app.use so whole server accesses
 app.use("/logs", logsController);
 

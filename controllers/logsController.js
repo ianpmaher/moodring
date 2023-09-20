@@ -7,6 +7,15 @@ const router = express.Router(); // set up Router method for this controller
 const Log = require("../models/logs.js");
 
 // ============= //
+// MIDDLEWARE THING HOPEFULLY // 
+const isAuthenticated = (req, res, next) => {
+  // is user logged in?
+  if (req.session.currentUser) {
+    next();
+  } else {
+    res.redirect("/sessions/new");
+  }
+};
 // ROUTES //
 // ============= //
 // INDEX ROUTE //
@@ -17,14 +26,14 @@ router.get("/", (req, res) => {
 });
 // ============= //
 // NEW ROUTE //
-router.get("/new", (req, res) => {
+router.get("/new", isAuthenticated, (req, res) => {
   res.render("new.ejs", {
     currentUser: req.session.currentUser
   });
 });
 // ============= //
 // HISTORY PAGE ROUTE //
-router.get("/history", async (req, res) => {
+router.get("/history", isAuthenticated, async (req, res) => {
   const foundLogs = await Log.find({});
   res.render("logHistory.ejs", {
     logs: foundLogs,
@@ -33,7 +42,7 @@ router.get("/history", async (req, res) => {
 });
 // ============= //
 // SHOW ROUTE //
-router.get("/:id/", async (req, res) => {
+router.get("/:id/", isAuthenticated, async (req, res) => {
   const foundLog = await Log.findById(req.params.id);
   res.render("show.ejs", {
     log: foundLog,
@@ -42,7 +51,7 @@ router.get("/:id/", async (req, res) => {
 });
 // ============ //
 // EDIT ROUTE //
-router.get("/:id/edit", async (req, res) => {
+router.get("/:id/edit", isAuthenticated, async (req, res) => {
   // console.log(`${Product.findById(req.params.id)}`);
   const logToEdit = await Log.findById(req.params.id);
   res.render("edit.ejs", {
@@ -51,7 +60,7 @@ router.get("/:id/edit", async (req, res) => {
   });
 });
 // POST ROUTE "Create"
-router.post("/", async (req, res) => {
+router.post("/", isAuthenticated, async (req, res) => {
   try {
     const newLog = await Log.create(req.body);
     console.log(newLog);
@@ -63,7 +72,7 @@ router.post("/", async (req, res) => {
 });
 // ============ //
 // PUT ROUTE -- PUT /logs/:id -- updates the info on the server
-router.put("/:id", async (req, res) => {
+router.put("/:id", isAuthenticated, async (req, res) => {
   try {
     // in edit.ejs, have the "value" of img url is the URL that was there before, so same img
     const updatedLog = await Log.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -76,7 +85,7 @@ router.put("/:id", async (req, res) => {
 });
 // ============ //
 // DELETE ROUTE -- DELETE /products/:id --
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", isAuthenticated, async (req, res) => {
   try {
     const logToDelete = await Log.findByIdAndDelete(req.params.id);
     console.log("Deleted log: ", logToDelete);

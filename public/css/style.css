@@ -287,7 +287,8 @@ input[type="submit"]:hover {
 }
 .index-link,
 #home-1,
-#home-2 {
+#home-2,
+#home-3 {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
@@ -306,6 +307,10 @@ input[type="submit"]:hover {
   color: white;
 }
 #home-2:hover {
+  background-color: var(--cinnabar-background);
+  color: white;
+}
+#home-3:hover {
   background-color: var(--cinnabar-background);
   color: white;
 }
