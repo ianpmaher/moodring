@@ -72,7 +72,6 @@ const isAuthenticated = (req, res, next) => {
 // use controller for user
 app.use("/user", userController);
 // sessions controller
-// putting this ABOVE the middleware isAuthenticated seemed to prevent infinite redirect loop
 app.use("/sessions", sessionsController)
 app.use(isAuthenticated);
 // use this controller with app.use so whole server accesses

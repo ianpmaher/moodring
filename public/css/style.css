@@ -33,10 +33,11 @@ body {
   /* below looks really cool but maybe not for this app */
   /* background: linear-gradient(to right, var(--dark-green), var(--dark-navy), var(--dark-green)); */
   background-color: var(--background-deep);
+
 }
 main {
   width: fit-content;
-  margin: 0.5rem auto;
+  margin: 0 auto;
   text-align: center;
 }
 nav {
@@ -50,7 +51,7 @@ nav {
   justify-content: center;
   background-color: var(--sea-green);
   max-width: fit-content;
-  margin: 0.5rem auto;
+  margin: 0 auto;
   letter-spacing: 1px;
   padding: 2rem;
   border-radius: 10%;
@@ -69,33 +70,8 @@ a {
   font-size: 1.35rem;
   color: var(--cinnabar-background);
 }
-.session-details {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  background-color: var(--sea-green);
-  max-width: fit-content;
-  max-height: fit-content;
-  letter-spacing: 1px;
-  padding: 2rem;
-  border-radius: 10%;
-}
-.session-details > li, .session-details > ul {
-  list-style-type: none;
-  display: flex;
-  flex-flow: column wrap;
-  gap: 2rem;
-  padding: 0;
-  margin: 0rem;
-  color: white
-}
-aside {
-  margin: 0.5rem auto;
-  position: absolute;
-  top: 1;
-  right: 1;
-  left: 0;
-  bottom: 1;
+footer {
+  text-align: center;
 }
 .title-text {
   color:aliceblue;
