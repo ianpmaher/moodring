@@ -61,19 +61,19 @@ const sessionsController = require("./controllers/sessions.js")
 
 // === Authentication === //
 // this is custom middleware
-// const isAuthenticated = (req, res, next) => {
-//   if (req.session.currentUser) {
-//     next();
-//   } else {
-//     res.redirect("/sessions/");
-//   }
-// };
+const isAuthenticated = (req, res, next) => {
+  if (req.session.currentUser) {
+    next();
+  } else {
+    res.redirect("/sessions/new");
+  }
+};
 
 // use controller for user
 app.use("/user", userController);
-// app.use(isAuthenticated);
 // sessions controller
 app.use("/sessions", sessionsController)
+app.use(isAuthenticated);
 // use this controller with app.use so whole server accesses
 app.use("/logs", logsController);
 
