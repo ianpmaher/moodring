@@ -1,11 +1,9 @@
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema
+const express = require("express")
+const router = express.Router()
+const bcrypt = require("bcrypt")
+const User = require("../models/user.js")
 
-const UserSchema = Schema({
-  username: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
+router.get("/", (req, res) => {
+  // res.send("new user screen")
+  res.render("newUser.ejs")
 })
-
-const User = mongoose.model("User", UserSchema)
-
-module.exports = User

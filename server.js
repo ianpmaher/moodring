@@ -2,6 +2,9 @@
 const express = require('express')
 const app = express()
 const methodOverride = require("method-override")
+// below needed for user auth and sessions
+const session = require("express-session")
+const bcrypt = require("bcrypt")
 
 // ===================== //
 // ENVIRONMENTAL VARIABLES //
@@ -37,8 +40,19 @@ db.on('disconnected', () => { console.log('mongo disconnected')})
 // CONTROLLERS //
 // import controller logsController.js
 const logsController = require("./controllers/logsController.js")
+// import controller userController.js
+const userController = require("./controllers/user.js")
+
+// === Authentication === //
+// this is custom middleware
+const isAuthenticated = (req, res, next) => {
+
+}
+
 // use this controller with app.use so whole server accesses
 app.use("/logs", logsController)
+// use controller for user
+app.use("/user", userController)
 
 
 // =========== //

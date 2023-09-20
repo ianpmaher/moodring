@@ -1,0 +1,16 @@
+<%- include("./partials/head.ejs") %>
+
+<div class="flex-container">
+  <h1>Create an Account</h1>
+  <form action="/user/" method="POST">
+    <input type="text" placeholder="Username" name="username" />
+    <input type="password" placeholder="Password" name="password" />
+    <input type="submit" value="Create Account!" />
+
+  </form>
+</div>
+<a href="/user/login">Login</a>
+
+
+
+<%- include("./partials/footer.ejs") %>

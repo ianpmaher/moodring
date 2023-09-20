@@ -119,6 +119,9 @@ a {
   font-size: 1rem;
   color:mintcream;
 }
+.flex-container {
+  display: flex;
+}
 /* EMOJI class definitions */
 .history-mood {
   vertical-align: middle;
