@@ -53,8 +53,9 @@ nav {
   max-width: fit-content;
   margin: 0 auto;
   letter-spacing: 1px;
-  padding: 2rem;
+  padding: 0.5rem;
   border-radius: 10%;
+  border: var(--gold-beige) 3px solid;
 }
 nav > ul,
 nav > li {
@@ -64,6 +65,45 @@ nav > li {
   gap: 2rem;
   padding: 0;
   margin: 0.5rem;
+}
+aside {
+  position: fixed;
+  display: flex;
+  flex-flow: column wrap;
+  top:0;
+  right:0;
+  bottom: 1;
+  left: 1;
+  width: min-content;
+  min-height: 20vh;
+  border: var(--gold-beige) 3px solid;
+  border-radius: 10%;
+  justify-content: center;
+  background-color: var(--sea-green);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+aside > ul,
+aside > li {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 2rem;
+}
+.welcome-logout {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* user login flex-container */
+.flex-container {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 0.5rem;
+  align-items:center;
+  justify-content: center;
+  gap: 3rem;
 }
 a {
   text-decoration: none;
@@ -95,7 +135,7 @@ footer {
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-template-rows: 1fr;
-  grid-column-gap: 2rem;
+  grid-column-gap: 1.5rem;
   grid-row-gap: 1.5rem;
 }
 .card {
@@ -175,15 +215,7 @@ input[type="submit"]:hover {
   /* margin-top: -3rem; */
 }
 
- /* user login flex-container */
- .flex-container {
-  display: flex;
-  flex-flow: column wrap;
-  padding: 2rem;
-  align-items:center;
-  justify-content: center;
-  gap: 3rem;
-}
+ 
 
 /* emojis stuff! I am super proud of this CSS */
 .radio-buttons-container {

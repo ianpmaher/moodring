@@ -7,9 +7,9 @@ router.get("/", (req, res) => {
 })
 
 router.get("/new", (req, res) => {
-  res.render("login.ejs"), {
+  res.render("login.ejs", {
     currentUser: req.session.currentUser
-  }
+  })
 })
 
 router.post("/new", async (req, res) => {

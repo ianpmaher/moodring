@@ -62,6 +62,7 @@ const sessionsController = require("./controllers/sessions.js")
 // === Authentication === //
 // this is custom middleware
 const isAuthenticated = (req, res, next) => {
+  // is user logged in?
   if (req.session.currentUser) {
     next();
   } else {

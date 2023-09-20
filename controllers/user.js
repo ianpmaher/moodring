@@ -10,11 +10,11 @@ router.get("/new", (req, res) => {
 // login page
 router.get("/login", (req, res) => {
   // res.send("new user screen")
-  res.redirect("/sessions/new");
+  res.render("login.ejs");
 });
 
 // creating new user
-router.post("/new", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     console.log("before has: ", req.body);
     // salt of 10 = level of difficulty of hashing

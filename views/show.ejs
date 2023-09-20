@@ -39,6 +39,26 @@
   <form action="/logs/<%= log.id %>?_method=DELETE" method="POST">
     <input type="submit" value="Delete Mood Log" id="delete-btn" />
   </form>
-
+</main>
+<aside>
+  <div class="flex-container">
+    <ul class="welcome-logout">
+      <% if (currentUser) { %>
+      <li>
+        keep going, <%= currentUser.username %> 
+      </li>
+      <li>
+        <form action="/sessions?_method=DELETE" method="POST">
+          <input type="submit" value="log out" />
+        </form>
+      </li>
+      <% } else { %>
+        <li><a href="/user/new">sign up for an account!</a></li>
+        <br />
+        <li><a href="/sessions/new">log in!</a></li>
+      <% } %>
+    </ul>
+  </div>
+</aside>
 
 <%- include("./partials/footer.ejs") %>
