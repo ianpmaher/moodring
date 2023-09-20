@@ -1,5 +1,6 @@
 <%- include("./partials/head.ejs") %>
 <!--partial has opening body nav and main tags-->
+
 <div class="circle-container">
   <div class="circle-outer">
     <a href="/logs/new"><div class="index-link" id="home-1">new</div></a>
@@ -7,6 +8,23 @@
   </div>
 </div>
 
-
 <span class="material-symbols-outlined">menu</span>
+</main>
+<aside> 
+<div class="session-details">
+  <ul>
+    <% if (currentUser) { %>
+      <li>keep going, <%= currentUser.username %> </li>
+      <li>
+        <form action="/sessions?_method=DELETE" method="POST">
+          <input type="submit" value="log out" />
+        </form>
+      </li>
+      <% } else { %>
+      <li><a href="/user/new">sign up for an account!</a></li>
+      <li><a href="/sessions/new">log in!</a></li>
+    <% } %>
+    </ul>
+  </div>
+</aside>
 <%- include("./partials/footer.ejs") %>
