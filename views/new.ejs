@@ -4,7 +4,7 @@
   <div class="circle-outer-new">
     <h1 class="title-text">new mood</h1>
     <form action="/logs" class="new-form" method="POST">
-      <span class="title-text">Name:</span> <input type="text" name="name" /><br />
+      <span class="title-text">Name:</span> <input type="text" name="name" value="<%= currentUser.username %>" /><br />
       <span class="title-text">Date: </span><input type="date" name="date" /><br />
       <span class="title-text">Time: </span><input type="time" name="time" /><br />
       <span class="title-text">Mood (scale of 1 - 5): </span>
@@ -46,6 +46,8 @@
       <li>
         keep going, <%= currentUser.username %> 
       </li>
+      <br/>
+      <br/>
       <li>
         <form action="/sessions?_method=DELETE" method="POST">
           <input type="submit" value="log out" />

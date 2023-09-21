@@ -18,7 +18,8 @@ Log.create([
     time: "10:10",
     mood: 5,
     description: "Wow I just had an Uncrustable French Toast, so good.",
-    tags: [ "so delicious" ]
+    tags: [ "so delicious" ],
+    color: "#325343"
   },
   {
     name: "Gore",
@@ -26,7 +27,8 @@ Log.create([
     time: "14:33",
     mood: 1,
     description: "Bootstrap exists.",
-    tags: [ "CSS", "bootstrap" ]
+    tags: [ "CSS", "bootstrap" ],
+    color: "#106967"
   },
   {
     name: "Gore",
@@ -34,7 +36,8 @@ Log.create([
     time: "18:30",
     mood: 4,
     description: "Class started, I am so here for this.",
-    tags: [ "SEI", "GA" ]
+    tags: [ "SEI", "GA" ],
+    color: "#bd93f9"
   },
   {
     name: "Gore",
@@ -42,7 +45,7 @@ Log.create([
     time: "19:00",
     mood: 5,
     description: "In 'n Out is actually terrible.",
-    tags: [ "food" ]
+    tags: [ "food" ],
   },
   {
     name: "Gore",
@@ -50,7 +53,8 @@ Log.create([
     time: "19:30",
     mood: 5,
     description: "I'm actually NOT a potato like I always say.",
-    tags: [ "not a potato" ]
+    tags: [ "not a potato" ],
+    color: "#44475a"
   },
   {
     name: "Gore",
@@ -58,7 +62,8 @@ Log.create([
     time: "06:30",
     mood: 3,
     description: "Half-asleep, time to develop some amazing designs because I'm gifted like that.",
-    tags: [ "Michelin Star" ]
+    tags: [ "Michelin Star" ],
+    color: "#314268"
   },
   {
     name: "Gore",
@@ -66,7 +71,8 @@ Log.create([
     time: "12:50",
     mood: 5,
     description: "Hash maps are pretty helpful for solving algo problems.",
-    tags: [ "programming" ]
+    tags: [ "programming" ],
+    color: "#8f8ec4"
   },
 
 ]).then((log) => {

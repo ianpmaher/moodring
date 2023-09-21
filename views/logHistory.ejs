@@ -33,6 +33,7 @@
         <span class="card-detail">
           <strong>Tags:</strong> <%= logs[i].tags %> 
         </span>
+        <span class="color-choice hidden"> <%= logs[i].color %> </span>
       </div>
     </a>
   <% } %>
@@ -45,6 +46,8 @@
       <li>
         keep going, <%= currentUser.username %> 
       </li>
+      <br/>
+      <br/>
       <li>
         <form action="/sessions?_method=DELETE" method="POST">
           <input type="submit" value="log out" />
