@@ -39,6 +39,7 @@ main {
   width: fit-content;
   margin: 0 auto;
   text-align: center;
+  z-index: 3;
 }
 nav {
   display: flex;
@@ -56,6 +57,10 @@ nav {
   padding: 0.5rem;
   border-radius: 10%;
   border: var(--gold-beige) 3px solid;
+  z-index: 2;
+}
+nav:hover {
+  z-index: 4;
 }
 nav > ul,
 nav > li {
@@ -84,6 +89,10 @@ aside {
   padding: 0;
   margin: 0;
   text-align: center;
+  z-index: 2;
+}
+aside:hover {
+  z-index: 3;
 }
 aside > ul,
 aside > li {
@@ -109,7 +118,6 @@ a {
   text-decoration: none;
   font-size: 1.35rem;
   color: var(--cinnabar-background);
-
 }
 footer {
   text-align: center;
@@ -151,11 +159,13 @@ footer {
   padding: 0.5rem;
   background-color: var(--true-blue);
   border-radius: 10%;
-  transition: 0.5s cubic-bezier(.7,.13,.82,.95) all
+  opacity: 0.9;
+  transition: 0.5s cubic-bezier(.7,.13,.82,.95) all;
 }
 .card:hover {
   scale: 125%;
-  border: 0.3rem solid var(--gold-beige)
+  border: 0.3rem solid var(--gold-beige);
+  opacity: 1;
 }
 .card-detail {
   font-family: "Quicksand", Geneva, Tahoma, sans-serif;
@@ -163,7 +173,8 @@ footer {
   color:mintcream;
 }
 .card > h3 {
-  color: mintcream
+  color: mintcream;
+  -webkit-text-stroke: 0.3px black;
 }
 
 /* EMOJI class definitions */
