@@ -6,6 +6,8 @@ Full Stack CRUD application utilizing the 7 RESTful routes, Express.js, MongoDB,
 # Functional deployment
 [https://still-sierra-16854-4298cf6fca1b.herokuapp.com/logs/](https://still-sierra-16854-4298cf6fca1b.herokuapp.com/logs/)
 
+<img width="755" alt="moodRingIndex" src="https://github.com/ianpmaher/moodring/assets/120536234/2c66d8d6-2e0a-4e70-bd8e-1ddcaa97a358">
+
 # Details:
 
 * **Mood Ring** is a mood tracker for people of all ages to express themselves and learn from stressors.
@@ -23,6 +25,9 @@ Full Stack CRUD application utilizing the 7 RESTful routes, Express.js, MongoDB,
 * Node.js modules such as Embedded JavaScript (EJS, plus EJS partials), method-override and, dotenv. This is in addition to HTML, CSS, and JavaScript through EJS and Express handling of static files.
 * User account functionality: sign up/login, with encrypted passwords (npm module bcrypt) and authorization flow (express-session).
 * This full stack application is set up with the MVC design pattern and has fully RESTful routes and full CRUD.
+
+<img width="890" alt="moodRingNew" src="https://github.com/ianpmaher/moodring/assets/120536234/4e5ba78d-720d-4852-9ce4-ee688015c14d">
+<img width="1328" alt="moodRingHistory" src="https://github.com/ianpmaher/moodring/assets/120536234/bc65028b-f6fc-49fd-9d99-b0a417b5e7ad">
 
 # Future Improvements
 
@@ -49,7 +54,7 @@ Full Stack CRUD application utilizing the 7 RESTful routes, Express.js, MongoDB,
 | Update    | /logs/:id    | PUT | update one mood long, redirect home |
 | Destroy    | /logs/:id    | DELETE | delete one mood long, redirect home |
 
-Wireframe
+Wireframes
 ![image](https://github.com/ianpmaher/moodring/assets/120536234/6013c824-fc3e-4bc7-adb3-6d661662bf66)
 ![image](https://github.com/ianpmaher/moodring/assets/120536234/6796de9b-34b1-434c-8b16-970d3ad6615d)
 ![image](https://github.com/ianpmaher/moodring/assets/120536234/bc7df9a0-83c6-4522-b479-c71156783dcd)
